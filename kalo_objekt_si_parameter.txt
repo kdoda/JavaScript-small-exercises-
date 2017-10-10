@@ -1,0 +1,63 @@
+var b1;
+var b2;
+
+
+function setup() {
+  createCanvas(600, 400);
+    b1=new Bubble(250,200);
+    b2=new Bubble(348,200);
+    
+}
+
+
+
+
+
+function draw() {
+  background(0);
+    b1.display();
+    b2.display();
+    b1.uptade();
+    b2.uptade();
+    
+    
+     
+    if(b1.pret(b2))         //kalojm objektin si parameter
+        {
+            b1.changeColor();
+            b2.changeColor();
+        }
+              
+}
+
+
+
+function Bubble(x,y){
+    
+    this.x=x;
+    this.y=y;
+    this.r=48;
+    this.col=color(255,100);
+   
+    
+    this.display=function(){
+        stroke(255);
+        fill(this.col);
+        ellipse(this.x,this.y,2*this.r,2*this.r,100);
+    }
+    this.uptade=function(){
+        this.x=this.x+random(-1,1);
+        this.y=this.y+random(-1,1);
+       
+    }
+    this.changeColor=function(){
+        this.col=color(random(0,255),random(0,255),random(0,255),100);
+    }
+    this.pret=function(other){
+        var d=dist(b1.x,b1.y,b2.x,b2.y);
+        if(d<this.r+other.r)
+            return true;
+        else return false;
+    }
+    
+}

@@ -1,0 +1,54 @@
+var stars=[100]; //nuk kemi pse ja japim qe ne fillim vleren
+
+// z e fusim qe ta marrim si referenc kur yjet largohen nga qendra tu rritet shpejtesia
+
+
+
+
+function setup() {
+  
+    createCanvas(400, 400);
+    for(var i=0;i<10;i++)
+        stars[i]= new Star();
+}
+
+
+
+
+
+function draw() {
+    
+    background(0);
+    
+    translate(width/2,height/2); // qe te jete si pik reference mesi i canvas normalist merret cepi lart majtas( e bejm sepse e duam te zhduken nga mesi) mendon sikur kjo e reja eshte pika 0.0 zhvendos origjinen!!!
+    
+    for(var i=0;i<10;i++)
+        {
+        stars[i].display();
+        stars[i].move();
+        }
+    console.log(width);
+
+
+}
+
+
+function Star(){
+    
+    this.x=random(-width/2,width/2);
+    this.y=random(-height/2,height/2);
+    this.z=width/2;    //e ndryshojn pozicionin ndryshe sepse disa e kan me te madhe z disa me te vogle
+    
+    this.move=function(){
+        this.z--;
+    }
+    
+    this.display=function(){
+        fill(255);
+        noStroke();
+    this.sx=map(this.x/this.z,0,1,0,width);
+    this.sy=map(this.y/this.z,0,1,0,height);   
+        
+        ellipse(this.sx,this.sy,6,6);
+    }
+}

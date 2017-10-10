@@ -1,0 +1,33 @@
+var on=false;
+function setup() {
+ 
+    createCanvas(640, 360);
+        
+
+}
+
+
+function draw() {
+  
+    
+ if(on)
+     background(0);
+    else background(255,0,0);
+
+    fill(255);
+    rect(100, 200, 75, 120);
+    
+   
+    noStroke();
+    
+    fill(255,50,100);
+    
+    ellipse(300,300,50,50);
+    
+}
+function mousePressed()
+{
+     // nqs ishte nez fike
+    on=!on;  //nqs ishte fik nize
+}
+

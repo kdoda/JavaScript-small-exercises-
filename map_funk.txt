@@ -1,0 +1,23 @@
+var col=0;
+
+function setup() {
+ 
+    createCanvas(640, 360);
+        
+
+}
+
+
+function draw() {
+  
+    col=map(mouseX,0,600,255,0);
+    
+  background(col);
+
+    
+    fill(255);
+    
+    ellipse(mouseX,150,50,50);
+     
+}
+

@@ -1,0 +1,60 @@
+var bubbles=[]; //nuk kemi pse ja japim qe ne fillim vleren
+var flowers=[];
+
+function preload(){
+ 
+    for(var i=0;i<3;i++)
+    flowers[i]=loadImage('images/flower'+i+'.jpg');
+   
+    
+}
+
+
+
+function setup() {
+  
+    createCanvas(600, 600);
+    
+}
+
+
+
+
+
+function draw() {
+  background(0);
+  
+    for(var i=0;i<bubbles.length;i++)
+        {
+            bubbles[i].display();
+            bubbles[i].uptade();        
+     
+}
+}
+
+function mousePressed(){
+    
+    var i= Math.floor(random(0,flowers.length));
+    bubbles.push(new Bubble(mouseX,mouseY,flowers[i]));
+}
+
+function Bubble(x,y,img){
+    
+    this.x=x;
+    this.y=y;
+    this.img=img;
+   
+   
+    
+    this.display=function(){
+         
+        imageMode(CENTER);  //me marr si pike reference qendren
+    
+        image(this.img,this.x,this.y);
+    }
+    this.uptade=function(){
+        this.x=this.x+random(-1,1);
+        this.y=this.y+random(-1,1);
+       
+    }
+}

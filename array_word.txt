@@ -1,0 +1,32 @@
+var words=["mateo","henri","unee","ai","nmee","botii"];
+
+var index=0;
+
+function setup() {
+ 
+    createCanvas(640, 360);
+      
+
+}
+
+
+function draw() {
+  
+    background(0);  
+    fill(255);
+    
+    textSize(35);
+    text("klevii",300,50);
+    text(words[index],300,150);
+    var x=random(0,100);
+    console.log(x);
+}
+
+function mousePressed(){
+   
+    index=floor(random(0,words.length-1));  // e rrumbullakos ne nr te plote sepse random kthen nr float
+    
+  
+    
+    
+}

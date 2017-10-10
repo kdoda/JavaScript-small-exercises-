@@ -1,0 +1,23 @@
+var num=24;
+
+var nums=[100,50,60,10];
+
+
+function setup() {
+ 
+    createCanvas(640, 360);
+    background(0);    
+
+}
+
+
+function draw() {
+  
+    stroke(255);
+    fill(80);
+    
+    ellipse(200,200,num,num);
+    
+    ellipse(290,290,nums[2],nums[2]);
+
+}

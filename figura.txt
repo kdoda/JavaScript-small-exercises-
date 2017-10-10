@@ -1,0 +1,31 @@
+var y=360,x=100,z=0;
+
+function setup() {
+ 
+    createCanvas(640, 360);
+        
+
+}
+
+
+function draw() {
+  
+    
+  background(250,100,100);
+
+    fill(200,200,200);
+    rect(100, 200, 75, 120);
+    
+    noStroke();
+    
+    fill(z,50,100);
+    
+    ellipse(x,y,50,50);
+     x++;
+    y-=2;
+    z+=10;
+}
+
+function mousePressed(){
+    background(250,100,100);
+}

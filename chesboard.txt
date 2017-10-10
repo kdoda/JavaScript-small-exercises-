@@ -1,0 +1,72 @@
+//chessboadr  # # # #
+//           # # # #
+//            # # # #    duke dhen perdoruesi gjatesine dhe gjeresine
+
+function setup() {
+  
+    createCanvas(400, 400);
+    
+}
+
+
+
+
+
+function draw() {
+    
+    background(0);
+    
+    
+    
+
+}
+
+
+function mousePressed(){
+    
+    var gjer,gjat;
+    var x="",y="";
+    var chessBoard="";
+    
+    gjer=Number(prompt("give me the width",""));
+    gjat=Number(prompt("give me the height",""));
+    
+    for(var i=0;i<gjer;i++)
+        {
+            if(i%2==0)
+                {
+                    x+=" ";
+                    y+="#";
+                }
+             else
+             {
+                x+="#";
+                y+=" ";
+             }
+        }
+    
+    
+    
+    
+  for(var i=0;i<gjat;i++)
+      {
+          if(i%2==0)
+              chessBoard+=x;
+          else chessBoard+=y;
+          
+          chessBoard+="\n";
+              
+      }
+    
+    console.log(chessBoard);
+
+    
+      }
+    
+    
+    
+    
+    
+    
+    
+    

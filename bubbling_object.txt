@@ -1,0 +1,39 @@
+var bubble={
+    x:100,
+    y:100,
+    display: function(){
+        stroke(255);
+        fill(255);
+        ellipse(this.x,this.y,24,24);
+    },
+    move: function(){
+        this.x=this.x + random(-1,1);
+        this.y=this.y + random(-1,1);
+    }
+} 
+
+
+
+
+
+
+
+
+function setup() {
+ 
+    createCanvas(640, 360);
+
+
+}
+
+
+function draw() {
+  
+    
+    
+   background(0);
+    bubble.move();
+bubble.display();
+ 
+}
+

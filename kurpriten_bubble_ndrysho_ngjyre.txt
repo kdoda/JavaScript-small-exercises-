@@ -1,0 +1,65 @@
+var bubbles=[]; //nuk kemi pse ja japim qe ne fillim vleren
+
+
+function setup() {
+  createCanvas(600, 400);
+  for(var i=0;i<5;i++)
+      {
+          bubbles[i]=new Bubble(random(width),random(height));
+      }
+    
+}
+
+
+
+
+
+function draw() {
+  background(0);
+  
+    for(var i=0;i<bubbles.length;i++)
+        {
+            bubbles[i].display();
+            bubbles[i].uptade();        
+        for(var j=i+1;j<bubbles.length;j++)    //shume e bukur elemino ktonrollin me veten dhe para 
+     {
+      if(bubbles[i].pret(bubbles[j]))         //kalojm objektin si parameter SUPEEER
+        {
+            bubbles[i].changeColor();          //mundohu te shkrush sa me shum kod brenda object qe ta thjeshtosh kur i thrret spse mund tbesh me shum 
+            bubbles[j].changeColor();          //me me pak kod dhe me thjesht jasht
+            
+        }
+     }
+}
+}
+
+
+function Bubble(x,y){
+    
+    this.x=x;
+    this.y=y;
+    this.r=48;
+    this.col=color(255,100);
+   
+    
+    this.display=function(){
+        stroke(255);
+        fill(this.col);
+        ellipse(this.x,this.y,2*this.r,2*this.r,100);
+    }
+    this.uptade=function(){
+        this.x=this.x+random(-1,1);
+        this.y=this.y+random(-1,1);
+       
+    }
+    this.changeColor=function(){
+        this.col=color(random(0,255),random(0,255),random(0,255),100);
+    }
+    this.pret=function(other){
+        var d=dist(this.x,this.y,other.x,other.y);
+        if(d<this.r+other.r)
+            return true;
+        else return false;
+    }
+    
+}
